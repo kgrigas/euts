@@ -1,0 +1,96 @@
+RewriteEngine on
+
+#Force SSL
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://www.mcewanfraserlegal.co.uk/$1 [R,L]
+
+#Redirects
+
+RedirectMatch 301 about.html 				http://www.mcewanfraserlegal.co.uk/staff/index
+RedirectMatch 301 property-videos.html 		http://www.mcewanfraserlegal.co.uk/propertyvideos
+RedirectMatch 301 news.html 				http://www.mcewanfraserlegal.co.uk
+RedirectMatch 301 part-exchange.html		http://www.mcewanfraserlegal.co.uk/part-exchange
+RedirectMatch 301 first-time-buyers.html	http://www.mcewanfraserlegal.co.uk
+RedirectMatch 301 buying.html				http://www.mcewanfraserlegal.co.uk/buying
+RedirectMatch 301 links.html				http://www.mcewanfraserlegal.co.uk/links
+RedirectMatch 301 faq.html					http://www.mcewanfraserlegal.co.uk/faq
+RedirectMatch 301 contact.html				http://www.mcewanfraserlegal.co.uk/contact
+RedirectMatch 301 terms.html				http://www.mcewanfraserlegal.co.uk/terms
+RedirectMatch 301 media.html				http://www.mcewanfraserlegal.co.uk/media
+RedirectMatch 301 recruitment.html			http://www.mcewanfraserlegal.co.uk/recruitment
+RedirectMatch 301 brand-ambassadors.html	http://www.mcewanfraserlegal.co.uk/brandambasadors
+RedirectMatch 301 brand-ambassador-referral-form.html	http://www.mcewanfraserlegal.co.uk/brand-ambasador
+RedirectMatch 301 testimonials.html			http://www.mcewanfraserlegal.co.uk/media/testimonials
+RedirectMatch 301 selling.html				http://www.mcewanfraserlegal.co.uk/selling
+RedirectMatch 301 fee-quote.html			http://www.mcewanfraserlegal.co.uk/feequote
+RedirectMatch 301 selling-with-us.html		http://www.mcewanfraserlegal.co.uk/sellingwithus
+RedirectMatch 301 marketing.html			http://www.mcewanfraserlegal.co.uk/marketing
+RedirectMatch 301 samples/24bAlbanyRoad$	http://www.mcewanfraserlegal.co.uk/samples/24bAlbanyRoad-page
+
+# REWRITE RULES FOR SITEPAGE-MANAGED FORM SUBMISSION
+RedirectMatch 301 selling-submit.html		http://www.mcewanfraserlegal.co.uk/selling
+RedirectMatch 301 fee-quote-submit.html	http://www.mcewanfraserlegal.co.uk/feequote
+RedirectMatch 301 buying-submit.html		http://www.mcewanfraserlegal.co.uk/buying
+RedirectMatch 301 part-exchange-submit.html	http://www.mcewanfraserlegal.co.uk/part-exchange
+RedirectMatch 301 contact-submit.html		http://www.mcewanfraserlegal.co.uk/contact
+RedirectMatch 301 register-submit.html		http://www.mcewanfraserlegal.co.uk/register
+RedirectMatch 301 brand-ambassadors-submit.html	http://www.mcewanfraserlegal.co.uk/brand-ambasador
+RedirectMatch 301 brand-ambassadors-referral-submit.html	http://www.mcewanfraserlegal.co.uk/brand-ambasador
+
+# MISC. REWRITE RULES
+RedirectMatch 301 property-(.*)$			http://www.mcewanfraserlegal.co.uk/properties/$1
+RedirectMatch 301 location-(.*)$			http://www.mcewanfraserlegal.co.uk/properties/search/location_$1
+#RedirectMatch 301 unsubscribe-(.*)$		http://www.mcewanfraserlegal.co.uk/login
+#RedirectMatch 301 sitemap.xml				sitemap_xml.php	[L]
+RedirectMatch 301 sitemap.html				http://www.mcewanfraserlegal.co.uk/sitemap
+RedirectMatch 301 consultants$				http://www.mcewanfraserlegal.co.uk/login
+
+# STATIC PATHS FOR PROPERTY SEARCHES
+# Basically these apache rewrite rules let us search for properties using a 
+# static URL path which gets converted into our search params. The path
+# looks like:
+# 
+# property/<location>/<locality>/<type>/<bedrooms>/<price>/
+# 
+# If a parameter is not set it should be replaced with "-".
+# Bedrooms is a comma-separated list.
+# Price is a range
+# 
+# Examples:
+# 
+# property/edinburgh/leith/flat/2,3,4/80000-120000/
+# property/east+lothian/-/house/-/-/
+# property/fife/burntisland/-/1,2/90000-95000/
+#
+RedirectMatch 301 property/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)-([^/]*)/?$	http://www.mcewanfraserlegal.co.uk/properties/search/location_$1+$2/type_$3/bedroomsMin_$4/bedroomsMax_$4/priceMin_$5/priceMax_$6
+RedirectMatch 301 property/([^/]*)/([^/]*)/([^/]*)/([^,]*)/?$	http://www.mcewanfraserlegal.co.uk/properties/search/location_$1+$2/type_$3/bedroomsMin_$4
+RedirectMatch 301 property/([^/]*)/([^/]*)/([^/]*)/?$	http://www.mcewanfraserlegal.co.uk/properties/search/location_$1+$2/type_$3
+RedirectMatch 301 property/([^/]*)/([^/]*)/?$	http://www.mcewanfraserlegal.co.uk/properties/search/location_$1+$2
+RedirectMatch 301 property/([^/]*)/?$		http://www.mcewanfraserlegal.co.uk/properties/search/location_$1
+RedirectMatch 301 property/?$          		http://www.mcewanfraserlegal.co.uk/properties/search
+
+# DATAFEED REWRITE RULES
+RedirectMatch 301 datafeed_globrix$			http://www.mcewanfraserlegal.co.uk/rss/globrix
+RedirectMatch 301 datafeed_fish4homes$		http://www.mcewanfraserlegal.co.uk/rss
+
+# REWRITE RULES FOR MAKING HTML AND PHP PAGE REQUESTS USE SITEPAGE NAMES BY DEFAULT
+RedirectMatch 301 google(.*)\.html			http://www.mcewanfraserlegal.co.uk
+RedirectMatch 301 sitepage.php(.*)			http://www.mcewanfraserlegal.co.uk
+RedirectMatch 301 sitepage_campaign.php(.*)	http://www.mcewanfraserlegal.co.uk
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+# Cache one week for images
+<FilesMatch "\.(jpg|jpeg|png|gif|swf|ico)$">
+    Header set Cache-Control "max-age=12960000, public"
+</FilesMatch>
+
+Options -Indexes
+
+AddDefaultCharset UTF-8
+DefaultLanguage en-GB

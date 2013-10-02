@@ -1,0 +1,101 @@
+/*!
+ * Gridpak Beta CSS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+
+
+
+/* Reusable column setup */
+.col {
+	border:0px solid rgba(0,0,0,0);
+	float:left;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-moz-background-clip:padding-box !important;
+	-webkit-background-clip:padding-box !important;
+	background-clip:padding-box !important;
+}
+
+
+
+/* 1. 12 Column Grid 0px - Infinity
+-----------------------------------------------------------------------------
+
+Span 1:    6.5%
+Span 2:    15.0%
+Span 3:    23.5%
+Span 4:    32.0%
+Span 5:    40.5%
+Span 6:    49.0%
+Span 7:    57.5%
+Span 8:    66.0%
+Span 9:    74.5%
+Span 10:    83.0%
+Span 11:    91.5%
+Span 12:    100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) {
+
+	.col {
+		margin-left:2%;
+		padding:0 1.5%;
+	}
+
+	.gridRow .col:first-child {
+		margin-left:0;
+	}
+
+
+	/*
+	Add your semantic classnames in alongside their corresponding spans here. e.g.
+
+	.span_3,
+	.my_semantic_class_name {
+		...
+	}
+	*/
+
+	.span1 {
+		width:6.5%;
+	}
+	.span2 {
+		width:15%;
+	}
+	.span3 {
+		width:23.5%;
+	}
+	.span4 {
+		width:32%;
+	}
+	.span5 {
+		width:40.5%;
+	}
+	.span6 {
+		width:49%;
+	}
+	.span7 {
+		width:57.5%;
+	}
+	.span8 {
+		width:66%;
+	}
+	.span9 {
+		width:74.5%;
+	}
+	.span10 {
+		width:83%;
+	}
+	.span11 {
+		width:91.5%;
+	}
+	.span12 {
+		margin-left:0;
+		width:100%;
+	}
+}
+
