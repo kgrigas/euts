@@ -3,17 +3,18 @@
 <head>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet'>
-	<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet'>
-	<link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Rokkitt:400,700|Alfa+Slab+One' rel='stylesheet' />
 
 	<?php
 	Yii::app()->clientScript->registerLinkTag('shortcut icon', null, Yii::app()->request->baseUrl.'/favicon.ico');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/main.css');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/font-awesome.min.css');
+	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/bootstrap.css');
 	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/gridpak.css');
+	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/font-awesome.min.css');
+	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/main.css');
+
 
 	Yii::app()->clientScript->registerCoreScript('jquery');
+	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/bootstrap.js');
 	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/mr.js',CClientScript::POS_END);
 	?>
 
@@ -23,15 +24,14 @@
 
 	<?php if (!isset(Yii::app()->params['enableAnalytics']) || Yii::app()->params['enableAnalytics'] == true): ?>
 		<script>
-			  var _gaq = _gaq || [];
-			  _gaq.push(['_setAccount', 'UA-7553822-4']);
-			  _gaq.push(['_trackPageview']);
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			  (function() {
-			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			  })();
+			ga('create', 'UA-7553822-8', 'moveright.co.uk');
+			ga('send', 'pageview');
+
 		</script>
 	<?php endif; ?>
 </head>
@@ -48,8 +48,8 @@
 					'items'=>array(
 						array('label'=>'Home', 'url'=>array('site/index')),
 						array('label'=>'Selling', 'url'=>array('site/page','view'=>'selling')),
+						array('label'=>'Enquire ', 'url'=>'site/enquire'),
 						array('label'=>'About', 'url'=>array('site/page','view'=>'about')),
-						//array('label'=>'Architecture & Self-Build ', 'url'=>''),
 					),
 				)); ?>
 				<div class='clear'></div>

@@ -23,7 +23,7 @@
 	<section id='question1' class='gridRow'>
 		<div class='col span12'>
 			<h2>What is included in estate agency fee?</h2>
-			<p>Our £599 fixed estate agency fee is paid only once we sell your property and applies to any house at any value. Beware of other low cost operators who make you pay upfront and do very little to sell your property. You have to ask yourself what is their motivation for an agent to sell your house once they have your hard earned money. Some operators even charge you more money after six months if they fail to sell your house. Be on your guard for these types of operators.</p>
+			<p>Our £595 fixed estate agency fee is paid only once we sell your property and applies to any house at any value. Beware of other low cost operators who make you pay upfront and do very little to sell your property. You have to ask yourself what is their motivation for an agent to sell your house once they have your hard earned money. Some operators even charge you more money after six months if they fail to sell your house. Be on your guard for these types of operators.</p>
 			<a href='#questions' class='toTop' title='Back to the list of questions'><i class='icon-angle-up'></i></a>
 		</div>
 		<div class='clear'></div>
@@ -62,7 +62,7 @@
 			<h2>Do you compete with the higher fee estate agents?</h2>
 			<p>We believe we offer everything most of the run of the mill estate agencies offer, particularly the ones that charge 1% or below. We don't aim to compete with the top end estate agents and we are honest enough to state these agents provide a more comprehensive service. We respect what these agents stand for, but it does come out at a higher price.</p>
 
-			<a class='button orange' style='display: block; text-align: center; margin: 2em auto 0; width: 50% !important;'>Get your no obligation valuation now <i class='icon-circle-arrow-right'></i></a>
+			<?php echo CHtml::link('Get your no obligation valuation now <i class="icon-circle-arrow-right"></i>',array('site/enquire'),array('style'=>'display: block; text-align: center; margin: 2em auto 0; width: 50% !important;', 'class'=>'button orange')); ?>
 			<a href='#questions' class='toTop' title='Back to the list of questions'><i class='icon-angle-up'></i></a>
 		</div>
 		<div class='clear'></div>
@@ -131,7 +131,7 @@
 		<div class='col span12'>
 			<h2>What do I do next?</h2>
 			<p>Complete the enquiry form and one of our experienced valuers will contact you to arrange a mutually convenient time for discussion.</p>
-			<a class='button orange' style='display: block; text-align: center; margin: 2em auto 0; width: 50% !important;'>Complete the enquiry form <i class='icon-circle-arrow-right'></i></a>
+			<?php echo CHtml::link('Complete the enquiry form <i class="icon-circle-arrow-right"></i>',array('site/enquire'),array('style'=>'display: block; text-align: center; margin: 2em auto 0; width: 50% !important;', 'class'=>'button orange')); ?>
 			<a href='#questions' class='toTop' title='Back to the list of questions'><i class='icon-angle-up'></i></a>
 		</div>
 		<div class='clear'></div>

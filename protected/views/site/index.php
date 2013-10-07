@@ -6,7 +6,7 @@
 		<p style='font-family: Rokkitt; font-size: 2em; margin-top: 0'><strong>Move Right</strong> - fixed price estate agency with no upfront payment</p>
 		<p>Move Right is a well established solicitor and estate agent practice, and have seen a gap in the market for a more transparent low cost agent in the lothian area, that is more interested in selling your property rather than promoting their low fees, like some other low cost agents</p>
 
-		<a class='button' style='display: block; text-align: center; margin-top: 2em;'>Enquire <i class='icon-circle-arrow-right'></i></a>
+		<?php echo CHtml::link('Enquire <i class="icon-circle-arrow-right"></i>',array('site/enquire'),array('style'=>'display: block; text-align: center; margin-top: 2em;', 'class'=>'button')); ?>
 	</div>
 	<div class='col span6'>
 		<?php echo CHtml::image('http://www.balearic-properties.com/blog/wp-content/uploads/sold.jpg','',array('style'=>'max-width: 100%; border-radius: 5px;')); ?>
