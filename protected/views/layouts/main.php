@@ -39,7 +39,7 @@
 <body>
 	<header>
 		<div class='content'>
-			<?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/img/logoFull.png','',array('style'=>'float: left;')),array('site/index')); ?>
+			<?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/img/logoFull4.png','',array('style'=>'float: left;')),array('site/index')); ?>
 
 			<nav id="mainmenu">
 				<?php
@@ -48,7 +48,7 @@
 					'items'=>array(
 						array('label'=>'Home', 'url'=>array('site/index')),
 						array('label'=>'Selling', 'url'=>array('site/page','view'=>'selling')),
-						array('label'=>'Enquire ', 'url'=>'site/enquire'),
+						array('label'=>'Enquire ', 'url'=>array('site/enquire')),
 						array('label'=>'About', 'url'=>array('site/page','view'=>'about')),
 					),
 				)); ?>
@@ -71,8 +71,8 @@
 
 	<!-- AddThis Smart Layers BEGIN -->
 	<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-52303e4822c93a4a"></script>
-	<script type="text/javascript">
+	<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-52303e4822c93a4a"></script>
+	<script>
 		addthis.layers({
 			'theme' : 'transparent',
 			'share' : {

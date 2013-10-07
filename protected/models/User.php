@@ -16,6 +16,8 @@
  */
 class User extends ActiveRecord
 {
+	private $_fullName;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,8 +37,7 @@ class User extends ActiveRecord
 			array('fName, sName, email, phone, address, postcode', 'required'),
 			array('created, updated', 'numerical', 'integerOnly'=>true),
 			array('fName, sName, email, phone, postcode', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
+			array('email','email'),
 			array('id, fName, sName, email, phone, address, postcode, created, updated', 'safe', 'on'=>'search'),
 		);
 	}
@@ -113,4 +114,24 @@ class User extends ActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function getFullName() {
+		if (empty($this->_fullName)) {
+			if(!empty($this->fName) && !empty($this->sName)){
+				$this->_fullName = $this->fName.' '.$this->sName;
+			}elseif(!empty($this->title) && !empty($this->sName)){
+				$this->_fullName = $this->title.' '.$this->sName;
+			}elseif(!empty($this->fName)){
+				$this->_fullName = $this->fName;
+			}elseif(!empty($this->sName)){
+				$this->_fullName = $this->sName;
+			}
+		}
+		return $this->_fullName;
+	}
+
+	public function setFullName($value) {
+		$this->_fullName = $value;
+	}
+
 }

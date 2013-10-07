@@ -4,7 +4,7 @@
 			<h2 style='margin: 0;'>Questions</h2>
 			<ol>
 				<li><a href='#question1'>What is included in estate agency fee?</a></li>
-				<li><a href='#question2'>Why should I use Move Right?</a></li>
+				<li><a href='#question2'>Why should I use Mov Right?</a></li>
 				<li><a href='#question3'>Why are you different from other low cost operators?</a></li>
 				<li><a href='#question4'>Why do you think you are the best of the low cost ESPC agents?</a></li>
 				<li><a href='#question5'>Do you compete with higher fee estate agents?</a></li>
@@ -31,7 +31,7 @@
 
 	<section id='question2' class='gridRow'>
 		<div class='col span12'>
-			<h2>Why should I use Move Right?</h2>
+			<h2>Why should I use Mov Right?</h2>
 			<p>We are a well-established, respected solicitors and estate agents who have been trading for 10 years in Scotland. We want to provide sellers in the Lothian area a more transparent upfront and honest service where we don't take a fee until we have actually <span style='text-transform: uppercase;'>performed</span> for you.</p>
 			<a href='#questions' class='toTop' title='Back to the list of questions'><i class='icon-angle-up'></i></a>
 		</div>

@@ -41,16 +41,15 @@ class SiteController extends Controller
 	public function actionEnquire() {
 		$user = new User;
 
-		if(isset($_POST['ajax']) && $_POST['ajax']==='valuation-form') {
-			echo CActiveForm::validate(array($user,$property));
-			Yii::app()->end();
-		}
-
 		if(!empty($_POST) && $this->honeypot()){
 			$user->attributes = $_POST['User'];
 
-			if($user->save() && $property->save()){
-				$this->redirect(array('site/page','view'=>'valuationthankyou'));
+			if($user->save()){
+				Yii::app()->email->add(array(
+					'rule'=>EmailRule::model()->findByPk(1),
+					'user'=>$user,
+				));
+				$this->redirect(array('site/page','view'=>'thankyou'));
 			}
 		}
 
