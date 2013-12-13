@@ -30,6 +30,11 @@ iframe {
 	display: block;
 }
 
+sup {
+	font-size: 0.33em;
+	top: -1.5em;
+}
+
 body > header {
 	padding: 0 0 0.75em;
 	color: #FFF;

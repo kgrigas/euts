@@ -100,7 +100,7 @@
 
 	<div class='col span4'>
 		<div>
-			<span style='font-family: "Alfa Slab One"; color: #D27721; font-size: 2em; text-shadow: 1px 1px 1px #666;'>&pound;595</span><br />
+			<span style='font-family: "Alfa Slab One"; color: #D27721; font-size: 2em; text-shadow: 1px 1px 1px #666;'>&pound;595<sup style='text-shadow: 1px 1px 1px #666;'>+VAT</sup></span><br />
 			<span style='font-family: "Alfa Slab One"; font-size: 1.2em;'>Any House, Any Value. Only when we sell</span>
 		</div>
 

@@ -3,8 +3,8 @@
 
 <section class='gridRow'>
 	<div class='col span6'>
-		<p style='font-family: Rokkitt; font-size: 2em; margin-top: 0'><strong>Move Right</strong> - fixed price estate agency with no upfront payment</p>
-		<p>Move Right is a well established solicitor and estate agent practice, and have seen a gap in the market for a more transparent low cost agent in the lothian area, that is more interested in selling your property rather than promoting their low fees, like some other low cost agents</p>
+		<p style='font-family: Rokkitt; font-size: 2em; margin-top: 0'><strong>Mov Right</strong> - fixed price estate agency with no upfront payment</p>
+		<p>Mov Right is a well established solicitor and estate agent practice, and have seen a gap in the market for a more transparent low cost agent in the Lothian area. We are more interested in selling your property rather than promoting our low fees, like some other low cost agents</p>
 
 		<?php echo CHtml::link('Enquire <i class="icon-circle-arrow-right"></i>',array('site/enquire'),array('style'=>'display: block; text-align: center; margin-top: 2em;', 'class'=>'button')); ?>
 	</div>
@@ -24,7 +24,7 @@
 
 
 	<div class='col span6'>
-		<span style='font-family: "Alfa Slab One"; color: #D27721; font-size: 4em; text-shadow: 1px 1px 2px #666; text-decoration: underline;'>&pound;595</span><br />
+		<span style='font-family: "Alfa Slab One"; color: #D27721; font-size: 4em; text-shadow: 1px 1px 2px #666;'>&pound;595<sup style='text-shadow: 1px 1px 1px #666;'>+VAT</sup></span><br />
 		<span style='font-family: "Alfa Slab One"; font-size: 1.2em;'>Any House, Any Value. Only when we sell</span>
 	</div>
 
@@ -50,23 +50,25 @@
 	<div class='gridRow'>
 		<div class='col span6' style='background: #FFDBDB; padding-bottom: 1em;'>
 			<h1 style='margin-bottom: 0;'>Typical low cost Agents:</h1>
-			<h2 style='font-size: 1.25em; margin-top: 0.25em;'>The hidden options they don't want you to know</h2>
+			<h2 style='font-size: 1.25em; margin-top: 0.25em;'>The hidden truths they don't want you to know</h2>
 			<ul style='font-size: 0.9375em; padding-left: 1.5em;'>
-				<li>&pound;600 up front whether you sell or not</li>
+				<li>Payment up front whether you sell or not</li>
 				<li>Repeat fees every six months</li>
 				<li>Hidden costs such as dealing with closing dates etc.</li>
 				<li>Advertising their low fee on schedules and for sale boards, which has proven to invite lower offers</li>
+				<li>Commision on third party services</li>
 			</ul>
 		</div>
 		<div class='col span6' style='background: #DFFFDB; padding-bottom: 1em;'>
 			<h1 style='margin-bottom: 0;'>Move Right:</h1>
 			<h2 style='font-size: 1.25em; margin-top: 0.25em;'>The transparent option</h2>
 			<ul style='font-size: 0.9375em; padding-left: 1.5em;'>
-				<li>ESPC Agents</li>
+				<li>No commision  added to ESPC fees</li>
 				<li>Home reports from &pound;295</li>
 				<li>In-house conveyancy</li>
 				<li>Superb photography</li>
 				<li>No advertising our low fees on schedules or for sale boards</li>
+				<li>No advertising your peoperty at low asking prices</li>
 			</ul>
 		</div>
 		<div class='clear'></div>
