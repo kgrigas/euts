@@ -2,7 +2,7 @@
 
 	<div class='col span12'>
 		<h1 style='margin: 0;'>You are one form away from becoming one of our clients</h1>
-		<p>After you fill out this form, we will contact you about your free, no-obligation valuation.<br />Just remember to fill out all the fields.</p>
+		<p>Complete the enquiry form below and one of our experienced consultants will contact you with more information about putting your property live with us.</p>
 	</div>
 	<div class='clear'></div>
 </section>
@@ -83,15 +83,35 @@
 				</div>
 				<div class='clear'></div>
 			</div>
+			
+			<div class='row gridRow'>
+				<div class='col span4'>
+					<?php echo $form->label($user, 'price');?>
+				</div>
+				<div class='col span8'>
+					<?php echo $form->textField($user, 'price', array('class' => 'form-control'));?>
+					<?php echo $form->error($user,'price'); ?>				
+				</div>
+				<div class='clear'></div>
+			</div>			
 
-
+			<div class='row gridRow'>
+				<div class='col span4'>
+					<?php echo $form->label($user, 'comments');?>
+				</div>
+				<div class='col span8'>
+					<?php echo $form->textArea($user, 'comments', array('class' => 'form-control', 'style' => 'min-height: 100px;'));?>
+					<?php echo $form->error($user,'comments'); ?>				
+				</div>
+				<div class='clear'></div>
+			</div>
 
 
 			<?php echo CHtml::label('Leave this empty','honeypot',array('style'=>'visibility: hidden; display: none;')); ?>
 			<?php echo CHtml::textField('honeypot','',array('style'=>'visibility: hidden; display: none;'))?>
 
 			<div class="buttons row" style='text-align: center; margin: 2em 0 1em;'>
-				<?php echo CHtml::submitButton('Request Valuation Now', array('class'=>'button orange')); ?><br />
+				<?php echo CHtml::submitButton('Send Enquiry Now', array('class'=>'button blue')); ?><br />
 				<?php //echo CHtml::link('Privacy policy',array('site/page','view'=>'privacy'),array('target'=>'_new')); ?>
 			</div>
 

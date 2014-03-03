@@ -34,11 +34,11 @@ class User extends ActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fName, sName, email, phone, address, postcode', 'required'),
+			array('fName, sName, email, phone, address, postcode, price', 'required'),
 			array('created, updated', 'numerical', 'integerOnly'=>true),
-			array('fName, sName, email, phone, postcode', 'length', 'max'=>255),
+			array('fName, sName, email, phone, postcode, price', 'length', 'max'=>255),
 			array('email','email'),
-			array('id, fName, sName, email, phone, address, postcode, created, updated', 'safe', 'on'=>'search'),
+			array('id, fName, sName, email, phone, address, price, comments, postcode, created, updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +66,8 @@ class User extends ActiveRecord
 			'phone' => 'Phone',
 			'address' => 'Address',
 			'postcode' => 'Postcode',
+			'price' => 'Approximate Valuation of Property',
+			'comments' => 'Additional comments or questions',
 			'created' => 'Created',
 			'updated' => 'Updated',
 		);
@@ -98,6 +100,8 @@ class User extends ActiveRecord
 		$criteria->compare('postcode',$this->postcode,true);
 		$criteria->compare('created',$this->created);
 		$criteria->compare('updated',$this->updated);
+		$criteria->compare('price',$this->price);
+		$criteria->compare('comments',$this->comments);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
