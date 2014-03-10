@@ -22,7 +22,7 @@
 			<span style='font-style: italic;'>"<?php echo $property->spec->summary;?>"</span>
 			<div class='borderGrey'></div>
 		</section>
-		<strong><?php echo $property->finance->priceType;?><strong> &pound;<?php echo $property->finance->price;?>
+		<strong><?php echo $property->finance->priceType;?><strong> <?php echo Yii::app()->format->currency($property->finance->price);?>
 		<div class='borderGrey'></div>
 		<strong>Bedrooms: </strong> <?php echo $property->spec->bedrooms;?><br />
 		<strong>Public Rooms: </strong> <?php echo $property->spec->publicRooms;?><br />
