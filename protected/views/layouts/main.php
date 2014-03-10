@@ -43,7 +43,7 @@
 						'items'=>array(
 							array('label'=>'Home', 'url'=>array('site/index')),
 							array('label'=>'Selling', 'url'=>array('site/page','view'=>'selling')),
-							array('label'=>'Properties For Sale', 'url'=>array('properties/search')),
+							array('label'=>'Properties For Sale', 'url'=>array('property/search')),
 							array('label'=>'Enquire ', 'url'=>array('site/enquire')),
 							array('label'=>'About', 'url'=>array('site/page','view'=>'about')),
 						),
@@ -93,10 +93,12 @@
 					<h2>Featured Property</h2>
 					<?php echo CHtml::image('https://www.mcewanfraserlegal.co.uk/img/properties/640x480/MFL112805_91.jpg','',array('style' => 'width: 100%;'));?>
 					<div class='propertyDescription'>
-					<?php $featured = Properties::Model()->findByAttributes(array('featured' => 1));?>
-					<p><?php echo $featured->address;?><p>
-					<p><?php echo $featured->priceType.' - &pound;'.$featured->price;?></p>
-					<p><?php echo CHtml::link('More information..', array('properties/view', 'id' => $featured->id),array('style' => 'color: #1e0fbe;'));?></p>
+						<?php $featured = Property::Model()->findByAttributes(array('featured' => 1)); ?>
+						<?php if (!empty($featured)): ?>
+							<p><?php echo $featured->address;?><p>
+							<p><?php echo $featured->priceType.' - &pound;'.$featured->price;?></p>
+							<p><?php echo CHtml::link('More information..', array('properties/view', 'id' => $featured->id),array('style' => 'color: #1e0fbe;'));?></p>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

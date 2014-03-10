@@ -1,6 +1,6 @@
 <?php
 
-class PropertiesController extends Controller
+class PropertyController extends Controller
 {
 
 	public $breadcrumbs;
@@ -18,21 +18,21 @@ class PropertiesController extends Controller
 	}
 
 	public function actionSearch(){
-		$properties = new Properties;
+		$properties = new Property;
 		$properties->unsetAttributes();
 		$properties->status = 'published';
 		$this->render('search', array('properties' => $properties));
 	}
 
 	public function actionView($id){
-		$property = Properties::Model()->findByPk($id);
-		
+		$property = Property::Model()->findByPk($id);
+
 		if(!empty($property)){
-			
+
 		}else{
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
-		
+
 		$this->render('view', array('property' => $property));
 	}
 }
