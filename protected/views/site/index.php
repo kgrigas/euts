@@ -162,7 +162,7 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 						<li><strong>Treasurer</strong> - Erifili Efthymiadou</li>
 						<li><strong>Secretary</strong> - Filip Margetiny</li>
 						<li><strong>Social Secretary</strong> - Tania Marques</li>
-						<li><strong>Press Release</strong> - Paraskevi Papagianni</li>
+						<li><strong>Public Relations</strong> - Paraskevi Papagianni</li>
 						<li><strong>IT</strong> - Karolis Grigas</li>
 					</ul>
 
