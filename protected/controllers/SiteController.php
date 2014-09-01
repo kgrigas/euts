@@ -19,7 +19,25 @@ class SiteController extends Controller
 
 
 	public function actionIndex() {
-		$this->render('index');
+
+
+		$json = $this->url_get_contents("http://www.google.com/calendar/feeds/info@edinburghtango.org.uk/public/full?alt=json&orderby=starttime&max-results=2&singleevents=true&sortorder=ascending&futureevents=true");
+		$var = json_decode($json);
+
+		$news = array();
+
+		foreach ($var->feed->entry as $entry) {
+			$news[] = array(
+				'title'=>$entry->title->{'$t'},
+				'content'=>substr($entry->content->{'$t'},0,100).'...',
+				'location'=>$entry->{'gd$where'}[0]->valueString,
+				'time'=>strtotime($entry->{'gd$when'}[0]->startTime)
+			);
+		}
+
+		$this->render('index', array(
+			'news'=>$news,
+		));
 	}
 
 
@@ -38,23 +56,22 @@ class SiteController extends Controller
 	    }
 	}
 
-	public function actionEnquire() {
-		$user = new User;
+	public function actionGoogle() {
+		$json = file_get_contents("http://www.google.com/calendar/feeds/info@edinburghtango.org.uk/public/full?alt=json&orderby=starttime&max-results=3&singleevents=true&sortorder=ascending&futureevents=true");
+		$var = json_decode($json);
+		var_dump($var->feed->entry[0]);
 
-		if(!empty($_POST) && $this->honeypot()){
-			$user->attributes = $_POST['User'];
+	}
 
-			if($user->save()){
-				Yii::app()->email->add(array(
-					'rule'=>EmailRule::model()->findByPk(1),
-					'user'=>$user,
-				));
-				$this->redirect(array('site/page','view'=>'thankyou'));
-			}
+	private function url_get_contents($url) {
+		if (!function_exists('curl_init')){
+			die('CURL is not installed!');
 		}
-
-		$this->render('enquire',array(
-			'user'=>$user,
-		));
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$output = curl_exec($ch);
+		curl_close($ch);
+		return $output;
 	}
 }

@@ -3,117 +3,56 @@
 <head>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Rokkitt:400,700|Alfa+Slab+One' rel='stylesheet' />
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' />
 
 	<?php
-	Yii::app()->clientScript->registerLinkTag('shortcut icon', null, Yii::app()->request->baseUrl.'/favicon.ico');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/bootstrap.css');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/gridpak.css');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/3rd-party/font-awesome.min.css');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/main.css');
+	Yii::app()->clientScript->registerLinkTag('shortcut icon', null, Yii::app()->request->baseUrl.'/images/logo.png');
+	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/site.min.css');
 
 
 	Yii::app()->clientScript->registerCoreScript('jquery');
-	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/bootstrap.js');
-	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.cycle2.min.js');
-	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/mr.js',CClientScript::POS_END);
+	Yii::app()->clientScript->registerScriptFile('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js');
+	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 	?>
 
-	<!--[if lt IE 9]>
-		<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/html5shiv.js"></script>
-	<![endif]-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
 </head>
 
 <body>
-	<div class='col-lg-1'></div>
-	<div class='col-lg-10 col-xs-12 col-md-12'>
-		<header>
-			<div class='left'>
-				<?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/img/the-chamber-practice.png','',array('style' => 'max-width: 200px;')), Yii::app()->baseUrl);?>
-			</div>
-			<div class='right'>
-				<div class='contactNumber'>CALL: <span class='color'>0131 603 5505</span><br />
-					<span style='font-size: 0.8em;'>www.MovRight.com</span>
-				</div>
-				<nav id="mainmenu">
-					<?php
-					$this->widget('zii.widgets.CMenu',array(
-						'encodeLabel'=>false,
-						'items'=>array(
-							array('label'=>'Home', 'url'=>array('site/index')),
-							array('label'=>'Selling', 'url'=>array('site/page','view'=>'selling')),
-							array('label'=>'Properties For Sale', 'url'=>array('property/search')),
-							array('label'=>'Enquire ', 'url'=>array('site/enquire')),
-							array('label'=>'About', 'url'=>array('site/page','view'=>'about')),
-						),
-					)); ?>
-					<div class='clear'></div>
-				</nav>
-				<div class='mobileMenu'>
-					CALL: 0131 603 5505
-				</div>
-			</div>
-			<div class='clear'></div>
-		</header>
-		<div>
-			<div class='col-md-3'>
-				<div class='leftCol'>
-				<?php $form=$this->beginWidget('CActiveForm', array(
-					'action'=>Yii::app()->createUrl('properties/search'),
-					'method'=>'post',
-					'htmlOptions'=>array(
-					),
-				)); ?>
-					<h2 style='margin-top: 0;'>Property Search</h2>
-					<div class='row'>
-						<?php echo CHtml::label('Location','location')?>
-						<?php echo CHtml::textField('location', '', array('class'=>'form-control')); ?>
-					</div>
-					<div class='row'>
-						<?php echo CHtml::label('Bedrooms','bedroomsMin')?>
-						<?php echo CHtml::dropDownList('bedroomsMin', 0, array(0=>'Any', 1=>1, 2=>2, 3=>3, 4=>4, 5=>'5+'), array('class'=>'form-control')); ?>
-					</div>
-					<div class='row'>
-						<?php echo CHtml::label('Max Price','maxPrice')?>
-						<?php echo CHtml::numberField('maxPrice', 1500000, array('class'=>'form-control', 'step'=>'25000')); ?>
-					</div>
 
-					<div style='text-align: center;'>
-						<?php echo CHtml::link('Search',array('properties/search'),array('style'=>'display: block; text-align: center; margin: 1em 0;', 'class'=>'button orange')); ?>
-					</div>
-					<?php $this->endWidget(); ?>
-					<div class='border'></div>
-
-					<h2>Selling Your Property</h2>
-					<p>The Chamber Practice is a low cost Estate Agents, if you are interested in selling with us, enquire below.</p>
-					<?php echo CHtml::link('Enquire Now',array('site/enquire'),array('style'=>'display: block; text-align: center; margin: 1em 0;', 'class'=>'button blue')); ?>
-					<div class='border'></div>
-
-					<h2>Featured Property</h2>
-					<?php echo CHtml::image('https://www.mcewanfraserlegal.co.uk/img/properties/640x480/MFL112805_91.jpg','',array('style' => 'width: 100%;'));?>
-					<div class='propertyDescription'>
-						<?php $featured = Property::Model()->findByAttributes(array('featured' => 1)); ?>
-						<?php if (!empty($featured)): ?>
-							<p><?php echo $featured->address;?><p>
-							<p><?php echo $featured->priceType.' - &pound;'.$featured->price;?></p>
-							<p><?php echo CHtml::link('More information..', array('properties/view', 'id' => $featured->id),array('style' => 'color: #1e0fbe;'));?></p>
-						<?php endif; ?>
-					</div>
-				</div>
-			</div>
-			<div class='col-md-9'><div class='mainContainer'><?php echo $content;?></div></div>
-			<div class='clear'></div>
+<nav class="navbar-inverse navbar-fixed-top navbar" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#section1">
+				<img id="logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" alt=""> EUTS</a>
 		</div>
-
+		<div id="w0-collapse" class="collapse navbar-collapse">
+			<ul id="w1" class="navbar-nav navbar-right nav">
+				<li><a href="#section2">Beginners</a></li>
+				<li><a href="#section3">Classes</a></li>
+				<li><a href="#section4">Contacts</a></li>
+			</ul>
+		</div>
 	</div>
-	<div class='col-lg-1'></div>
-	<div class='clear'></div>
+</nav>
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by The Chamber Practice<br/>
-		The Chamber Practice, Solicitors and Estate Agents <br />
-		www.MovRight.com
+
+	<div class="wrap">
+		<?php echo $content;?>
 	</div>
+<footer class="text-center">
+	&#169; <?php echo date("Y"); ?> Edinburgh University Tango Society
+</footer>
+
 </body>
 </html>

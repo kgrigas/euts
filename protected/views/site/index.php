@@ -1,73 +1,172 @@
+<?php
+/**
+ * @var $news Array
+ */
+?>
 
-<section class='gridRow'>
-	<div class='col-sm-6'>
-		<p style='font-family: Rokkitt; font-size: 2em; margin-top: 0; line-height: 30px;'><strong>The Chamber Practice</strong> - a fixed price estate agency with no upfront payment</p>
-		<p>The Chamber Practice is a well established, Solicitors and Estate Agents. We have noticed an absence in the Lothian area for a more transparent low cost agent, so we are stepping in to help you. Unlike some other low cost agents, The Chamber Practice is more interested in selling your property rather than promoting our low fees.</p>
+<section id="section1">
 
-		<?php echo CHtml::link('Enquire <i class="icon-circle-arrow-right"></i>',array('site/enquire'),array('style'=>'display: block; text-align: center; margin-top: 2em;', 'class'=>'button blue')); ?>
-	</div>
-	<div class='col-sm-6'>
-		<?php echo CHtml::image('http://www.balearic-properties.com/blog/wp-content/uploads/sold.jpg','',array('style'=>'max-width: 100%; border-radius: 5px;')); ?>
-	</div>
+	<video autoplay loop poster="<?php echo Yii::app()->baseUrl; ?>/images/video.jpg">
+		<source src="<?php echo Yii::app()->baseUrl; ?>/videos/section1.mp4" type="video/mp4" />
+	</video>
 
-	<div class='clear'></div>
-</section>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<h1>Dance. Talk. Enjoy.</h1>
+				<h2>Edinburgh University Tango Society</h2>
 
+				<nav>
+					<a class="button" href="#section2">Information for beginners </a>
+					<a class="highlight button" href="#section3">Times for Dancing</a>
 
-<section class='gridRow' style='text-align: center; margin-top: 10px;'>
-	<div class='col-sm-6'>
-		<span style='font-family: "Alfa Slab One"; color: #D27721; font-size: 4em; text-shadow: 1px 1px 2px #666;'>WOW!</span><br />
-		<span style='font-family: "Alfa Slab One"; font-size: 1.2em;'>Fixed Price Estate Agency</span>
-	</div>
+<!--					<a href="#section2">Beginners</a> //
+					<a href="#section3">Classes</a> //
+					<a href="#section4">Contacts</a>-->
+				</nav>
+			</div>
+			<div class="col-sm-4 col-xs-12">
 
-
-	<div class='col-sm-6'>
-		<span style='font-family: "Alfa Slab One"; color: #D27721; font-size: 4em; text-shadow: 1px 1px 2px #666;'>&pound;595<sup style='text-shadow: 1px 1px 1px #666;'>+VAT</sup></span><br />
-		<span style='font-family: "Alfa Slab One"; font-size: 1.2em;'>Any House, Any Value. Only when we sell</span>
-	</div>
-
-	<div class='clear'></div>
-</section>
-
-<section class='gridRow' style='margin-bottom: 0;'>
-	<div class='col-sm-12' style='padding: 0;'>
-		<div class='highlight'>No Payment Until We Sell!</div>
-	</div>
-
-	<div class='clear'></div>
-</section>
-
-<section class='gridRow' style='background: #666; border-bottom: 1px solid #DDD; margin-top: 0; text-align: center;'>
-	<div class='col-sm-12'>
-		<?php echo CHtml::image(Yii::app()->baseUrl.'/img/logos/espc.png','',array('style'=>'max-width: 5%; vertical-align: middle;')); ?> <h1 style='display: inline-block; margin: 0.75em 0.5em; text-shadow: 0 0 1px #000; color: #FFF;'>ESPC Member</h1>
-	</div>
-	<div class='clear'></div>
-</section>
-
-<section style='padding: 1em 0;'>
-	<div class='gridRow'>
-		<div class='col-sm-6' style='padding-bottom: 1em;'>
-			<h1 style='margin-bottom: 0;'>Typical low cost Estate Agents:</h1>
-			<h2 style='font-size: 1.25em; margin-top: 0.25em;'>The ugly truth</h2>
-			<ul style='font-size: 0.9375em; padding-left: 1.5em;'>
-				<li>Upfront payment regardless of whether you sell or not</li>
-				<li>Repeat fees every six months</li>
-				<li>Additional hidden costs such as dealing with closing dates</li>
-				<li>Preoccupation with advertising their own low fees on your marketing</li>
-				<li>Commission on third party services</li>
-			</ul>
+				<div class="news">
+					<?php foreach ($news as $singleNews): ?>
+						<h3><?php echo $singleNews['title']; ?></h3>
+						<h5><?php echo Yii::app()->format->datetime($singleNews['time']); ?></h5>
+						<h4><?php echo $singleNews['location']; ?></h4>
+						<?php /*echo $singleNews['content'];*/ ?>
+					<?php endforeach; ?>
+				</div>
+			</div>
 		</div>
-		<div class='col-sm-6' style='padding-bottom: 1em;'>
-			<h1 style='margin-bottom: 0;'>The Chamber Practice:</h1>
-			<h2 style='font-size: 1.25em; margin-top: 0.25em;'>The transparent option</h2>
-			<ul style='font-size: 0.9375em; padding-left: 1.5em;'>
-				<li>No commission added to ESPC fees</li>
-				<li>Home reports from &pound;295</li>
-				<li>In-house conveyancing</li>
-				<li>Prioritise your marketing, not our low fees</li>
-				<li>Protect your property's asking price</li>
-			</ul>
+	</div>
+</section>
+
+<section id="section2">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<div class="text">
+					<p>Hola Tangueras and Tangueros!</p>
+					<p>Forget the Strictly Come Dancing ballroom tango of stiff postures and roses between teeth! This is Argentine tango – where every dance is different; where you form the most incredible of connections; where you never stop learning and where a whole world-wide community awaits you. And at your fingertips, at minimal cost, EUTS can take you there with some of the best teachers around, a laid back atmosphere and a host of social events nearly every day of the week.</p>
+					<p>In the words of Margaret Putnam: “Tango is the Everest of social dance. Impossible. Demanding. Intricate. And therefore irresistible.”</p>
+					<p>Also, don’t forget to check the <a href="#section3">calendar</a> for the latest changes in classes!</p>
+					<p>Wishing you the best,<br />
+						EUTS Committee</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="text freshers">
+					<h1>Freshers' week 2014:</h1>
+					<p>There are two taster classes during the freshers' week. You don't need dancing experience, nor a partner, just come and see what it feels like to dance Tango. We provide everything. Now pick your time:</p>
+					<div class="weekday">
+						<h1><span class="bolder">Wednesday, 10<sup>th</sup></span></h1>
+						<h2>6:00pm - 7:30pm</h2>
+						<h3>The Study, Teviot</h3>
+						<div class="item">
+							<p>Tango taster with our long running teacher Toby - no experience or partner needed.</p>
+						</div>
+					</div>
+					<div class="weekday">
+						<h1><span class="bolder">Saturday, 13<sup>th</sup></span></h1>
+						<h2>12:00pm - 1:00pm</h2>
+						<h3>The Study, Teviot</h3>
+						<div class="item">
+							<p>Another taster with Sarah - again, we provide everything you need.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</section>
+<section id="section3">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<h1 style="font-size: 2.5em; margin-bottom: 1.25em;">Classes &amp; Practicas</h1>
+
+				<div class="weekday">
+					<h1><span class="bolder">Monday</span> classes with Sarah</h1>
+					<h2>Pi in the sky, Kings Buildings House</h2>
+					<div class="item">
+						<h3><span class="bolder">5:30pm - 6:30pm</span> Beginners</h3>
+						<p>To learn and re-learn the first steps</p>
+					</div>
+					<div class="item">
+						<h3><span class="bolder">6:30pm - 7:30pm</span> Dancing and Technique</h3>
+						<p>All levels welcome</p>
+					</div>
+				</div>
+				<div class="weekday">
+					<h1><span class="bolder">Tuesday</span> practica with Toby</h1>
+					<h2>Debating Hall, Teviot</h2>
+					<div class="item">
+						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
+						<p>Get personal advice and use the dancefloor. And it's free!</p>
+					</div>
+
+					<h1><span class="bolder">Tuesday</span> classes with Brian & Julieta</h1>
+					<h2>Debating Hall, Teviot</h2>
+					<div class="item">
+						<h3><span class="bolder">6:00pm-7:15pm</span> Intermediates</h3>
+						<p>For those who dance for more than a year</p>
+					</div>
+					<div class="item">
+						<h3><span class="bolder">7:15pm-8:30pm</span> Post-Beginners</h3>
+						<p>For those with at least six months of experience</p>
+					</div>
+				</div>
+				<div class="weekday">
+					<h1><span class="bolder">Wednesday</span> practica with Toby</h1>
+					<h2>Debating Hall, Teviot</h2>
+					<div class="item">
+						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
+						<p>Because one practica is not enought. Did we mentioned that it's free?</p>
+					</div>
+
+
+					<h1><span class="bolder">Wednesday</span> classes with Toby</h1>
+					<h2>The Venue, Poterrow</h2>
+					<div class="item">
+						<h3><span class="bolder">6:00pm-7:00pm</span> Improvers</h3>
+						<p>For those with experience or who want to improve faster</p>
+					</div>
+					<div class="item">
+						<h3><span class="bolder">7:00pm-8:30pm</span> Beginners</h3>
+						<p>For those making their first steps</p>
+					</div>
+					<div class="item">
+						<p>Need more time to try out new things you learned? Stay after the class, since it is followed by <span class="bolder">unsupervised practica</span> (spacious dancefloor with music) <span class="bolder">until 9:30pm</span>!</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class='clear'></div>
+
+	</div>
+</section>
+
+<section id="section4">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-4">
+				<div class="text">
+					<h1>Contacts</h1>
+
+					<i class="fa fa-fw fa-lg fa-envelope"></i> Email us at <a href="mailto:tangosoc@googlemail.com">tangosoc@googlemail.com</a><br />
+					<i class="fa fa-fw fa-lg fa-facebook-square"></i> Find us on <a href="https://www.facebook.com/groups/eutangosociety/" target="_blank">Facebook</a>
+
+					<h3>EUTS Comittee</h3>
+					<ul>
+						<li><strong>President</strong> - Ivana Lapsanska</li>
+						<li><strong>Vice President</strong> - Dimo Petroff</li>
+						<li><strong>Trasurer</strong> - Erifili Efthymiadou</li>
+						<li><strong>Secretary</strong> - Filip Margetiny</li>
+						<li><strong>Social Secretary</strong> - Tania Marques</li>
+						<li><strong>Press Release</strong> - Paraskevi Papagianni</li>
+						<li><strong>IT</strong> - Karolis Grigas</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4 col-sm-push-4">
+			</div>
+		</div>
 	</div>
 </section>
