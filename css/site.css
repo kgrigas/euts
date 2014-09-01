@@ -140,6 +140,7 @@ a:hover {
   background: url('../images/section2.jpg');
   background-position: bottom center;
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   border-top: 5px solid #000;
   color: #EFEFEF;
@@ -161,9 +162,11 @@ a:hover {
   margin: 10px 0 20px;
 }
 #section3 {
-  background: url('../images/section3.jpg');
+  background-color: #e74c3c;
+  background-image: url('../images/section3.jpg');
   background-position: bottom center;
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   border-top: 5px solid #000;
   padding: 3em 0;
@@ -175,6 +178,7 @@ a:hover {
   background-color: #000;
   background-position: bottom center;
   background-size: contain;
+  -webkit-background-size: contain;
   background-attachment: fixed;
   background-repeat: no-repeat;
   border-top: 5px solid #000;

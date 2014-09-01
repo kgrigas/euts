@@ -70,8 +70,6 @@ a {
 
 }
 
-
-
 #section1 {
   background: url('../images/section1.jpg');
   background-attachment: fixed;
@@ -167,6 +165,7 @@ a {
   background: url('../images/section2.jpg');
   background-position: bottom center;
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   border-top: 5px solid #000;
   color: #EFEFEF;
@@ -194,9 +193,11 @@ a {
 }
 
 #section3 {
-  background: url('../images/section3.jpg');
+  background-color: @accent;
+  background-image: url('../images/section3.jpg');
   background-position: bottom center;
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   border-top: 5px solid #000;
   padding: 3em 0;
@@ -209,6 +210,7 @@ a {
   background-color: #000;
   background-position: bottom center;
   background-size: contain;
+  -webkit-background-size: contain;
   background-attachment: fixed;
   background-repeat: no-repeat;
   border-top: 5px solid #000;

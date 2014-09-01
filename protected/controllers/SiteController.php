@@ -20,19 +20,22 @@ class SiteController extends Controller
 
 	public function actionIndex() {
 
+		$news = Yii::app()->cache->get('news');
+		if ($news === false) {
+			$json = $this->url_get_contents("http://www.google.com/calendar/feeds/info@edinburghtango.org.uk/public/full?alt=json&orderby=starttime&max-results=2&singleevents=true&sortorder=ascending&futureevents=true");
+			$var = json_decode($json);
 
-		$json = $this->url_get_contents("http://www.google.com/calendar/feeds/info@edinburghtango.org.uk/public/full?alt=json&orderby=starttime&max-results=2&singleevents=true&sortorder=ascending&futureevents=true");
-		$var = json_decode($json);
+			$news = array();
 
-		$news = array();
-
-		foreach ($var->feed->entry as $entry) {
-			$news[] = array(
-				'title'=>$entry->title->{'$t'},
-				'content'=>substr($entry->content->{'$t'},0,100).'...',
-				'location'=>$entry->{'gd$where'}[0]->valueString,
-				'time'=>strtotime($entry->{'gd$when'}[0]->startTime)
-			);
+			foreach ($var->feed->entry as $entry) {
+				$news[] = array(
+					'title'=>$entry->title->{'$t'},
+					'content'=>substr($entry->content->{'$t'},0,100).'...',
+					'location'=>$entry->{'gd$where'}[0]->valueString,
+					'time'=>strtotime($entry->{'gd$when'}[0]->startTime)
+				);
+			}
+			Yii::app()->cache->set('news',$news,1800);
 		}
 
 		$this->render('index', array(

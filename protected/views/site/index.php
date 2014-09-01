@@ -1,7 +1,9 @@
 <?php
 /**
  * @var $news Array
+ * @var $this SiteController
  */
+$this->pageTitle = 'Edinburgh University Tango Society';
 ?>
 
 <section id="section1">
@@ -153,16 +155,22 @@
 					<i class="fa fa-fw fa-lg fa-envelope"></i> Email us at <a href="mailto:tangosoc@googlemail.com">tangosoc@googlemail.com</a><br />
 					<i class="fa fa-fw fa-lg fa-facebook-square"></i> Find us on <a href="https://www.facebook.com/groups/eutangosociety/" target="_blank">Facebook</a>
 
-					<h3>EUTS Comittee</h3>
+					<h3>EUTS Committee</h3>
 					<ul>
 						<li><strong>President</strong> - Ivana Lapsanska</li>
 						<li><strong>Vice President</strong> - Dimo Petroff</li>
-						<li><strong>Trasurer</strong> - Erifili Efthymiadou</li>
+						<li><strong>Treasurer</strong> - Erifili Efthymiadou</li>
 						<li><strong>Secretary</strong> - Filip Margetiny</li>
 						<li><strong>Social Secretary</strong> - Tania Marques</li>
 						<li><strong>Press Release</strong> - Paraskevi Papagianni</li>
 						<li><strong>IT</strong> - Karolis Grigas</li>
 					</ul>
+
+					<h3>Credits</h3>
+					<ul>
+						<li><strong>Videography</strong> - <a href="http://www.filmsbyben.com/" target="_blank">Ben Price / filmsbyben</a></li>
+					</ul>
+
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-4 col-sm-push-4">
