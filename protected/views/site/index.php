@@ -37,7 +37,7 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 					<?php endforeach; ?>
 				</div>
 
-				<div class="news">
+				<div class="blog">
 					<h4 class="title">Latest blog entry</h4>
 					<h3><?php echo CHtml::link($blogPost->post_title.' <i class="fa fa-angle-right"></i>',$blogPost->guid); ?></h3>
 					<h5><?php echo Yii::app()->format->datetime(strtotime($blogPost->post_date)); ?></h5>

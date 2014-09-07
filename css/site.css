@@ -124,7 +124,8 @@ a:hover {
   height: auto;
   z-index: 3;
 }
-#section1 .news {
+#section1 .news,
+#section1 .blog {
   background: #636363;
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid #333;
@@ -133,15 +134,21 @@ a:hover {
   font-weight: 400;
   margin: 20px 0;
 }
-#section1 .news > h3 {
+#section1 .news > h3,
+#section1 .blog > h3 {
   font-size: 20px;
   font-weight: 400;
 }
-#section1 .news h4.title {
+#section1 .news h4.title,
+#section1 .blog h4.title {
   font-family: Courier New, monospaced;
 }
-#section1 .news a {
+#section1 .news a,
+#section1 .blog a {
   color: #FFF;
+}
+#section1 .blog h3 {
+  font-size: 18px;
 }
 #section2 {
   background: url('../images/section2.jpg');
