@@ -2,6 +2,7 @@
 /**
  * @var $news Array
  * @var $this SiteController
+ * @var $blogPost WPPosts
  */
 $this->pageTitle = 'Edinburgh University Tango Society';
 ?>
@@ -21,21 +22,25 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 				<nav>
 					<a class="button" href="#section2">Information for beginners </a>
 					<a class="highlight button" href="#section3">Times for Dancing</a>
-
-<!--					<a href="#section2">Beginners</a> //
-					<a href="#section3">Classes</a> //
-					<a href="#section4">Contacts</a>-->
 				</nav>
 			</div>
 			<div class="col-sm-4 col-xs-12">
 
 				<div class="news">
+					<h4 class="title">Upcoming events</h4>
+
 					<?php foreach ($news as $singleNews): ?>
 						<h3><?php echo $singleNews['title']; ?></h3>
 						<h5><?php echo Yii::app()->format->datetime($singleNews['time']); ?></h5>
 						<h4><?php echo $singleNews['location']; ?></h4>
 						<?php /*echo $singleNews['content'];*/ ?>
 					<?php endforeach; ?>
+				</div>
+
+				<div class="news">
+					<h4 class="title">Latest blog entry</h4>
+					<h3><?php echo CHtml::link($blogPost->post_title.' <i class="fa fa-angle-right"></i>',$blogPost->guid); ?></h3>
+					<h5><?php echo Yii::app()->format->datetime(strtotime($blogPost->post_date)); ?></h5>
 				</div>
 			</div>
 		</div>

@@ -40,6 +40,7 @@
 			<ul id="w1" class="navbar-nav navbar-right nav">
 				<li><a href="#section2">Beginners</a></li>
 				<li><a href="#section3">Classes</a></li>
+				<li><a href="<?php echo Yii::app()->baseUrl.'/blog/'; ?>">Blog</a></li>
 				<li><a href="#section4">Contacts</a></li>
 			</ul>
 		</div>
