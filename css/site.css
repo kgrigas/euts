@@ -141,7 +141,8 @@ a:hover {
 }
 #section1 .news h4.title,
 #section1 .blog h4.title {
-  font-family: Courier New, monospaced;
+  text-transform: uppercase;
+  font-size: 1em;
 }
 #section1 .news a,
 #section1 .blog a {

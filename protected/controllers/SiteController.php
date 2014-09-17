@@ -22,6 +22,7 @@ class SiteController extends Controller
 
 		//News
 		$news = Yii::app()->cache->get('news');
+		$news = false;
 
 		if ($news === false) {
 			$json = $this->url_get_contents("http://www.google.com/calendar/feeds/t1kogqff97immvd7rrc058flu8@group.calendar.google.com/public/full?alt=json&orderby=starttime&max-results=2&singleevents=true&sortorder=ascending&futureevents=true");

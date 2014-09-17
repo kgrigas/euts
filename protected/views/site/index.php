@@ -50,7 +50,7 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 <section id="section2">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-6">
+			<div class="col-xs-12 col-md-8 col-md-push-2">
 				<div class="text">
 					<p>Hola Tangueras and Tangueros!</p>
 					<p>Forget the Strictly Come Dancing ballroom tango of stiff postures and roses between teeth! This is Argentine tango – where every dance is different; where you form the most incredible of connections; where you never stop learning and where a whole world-wide community awaits you. And at your fingertips, at minimal cost, EUTS can take you there with some of the best teachers around, a laid back atmosphere and a host of social events nearly every day of the week.</p>
@@ -60,28 +60,7 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 						EUTS Committee</p>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-6">
-				<div class="text freshers">
-					<h1>Freshers' week 2014:</h1>
-					<p>There are two taster classes during the freshers' week. You don't need dancing experience, nor a partner, just come and see what it feels like to dance Tango. We provide everything. Now pick your time:</p>
-					<div class="weekday">
-						<h1><span class="bolder">Wednesday, 10<sup>th</sup></span></h1>
-						<h2>6:00pm - 7:30pm</h2>
-						<h3>The Study, Teviot</h3>
-						<div class="item">
-							<p>Tango taster with our long running teacher Toby - no experience or partner needed.</p>
-						</div>
-					</div>
-					<div class="weekday">
-						<h1><span class="bolder">Saturday, 13<sup>th</sup></span></h1>
-						<h2>12:00pm - 1:00pm</h2>
-						<h3>The Study, Teviot</h3>
-						<div class="item">
-							<p>Another taster with Sarah - again, we provide everything you need.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
 	</div>
 </section>
 <section id="section3">
@@ -94,12 +73,12 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 					<h1><span class="bolder">Monday</span> classes with Sarah</h1>
 					<h2>Pi in the sky, Kings Buildings House</h2>
 					<div class="item">
-						<h3><span class="bolder">5:30pm - 6:30pm</span> Beginners</h3>
+						<h3><span class="bolder">5:30pm - 6:20pm</span> Beginners</h3>
 						<p>To learn and re-learn the first steps</p>
 					</div>
 					<div class="item">
-						<h3><span class="bolder">6:30pm - 7:30pm</span> Dancing and Technique</h3>
-						<p>All levels welcome</p>
+						<h3><span class="bolder">6:30pm - 7:20pm</span> Improvers</h3>
+						<p>To further improve your dancing abilities</p>
 					</div>
 				</div>
 				<div class="weekday">
@@ -113,12 +92,16 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 					<h1><span class="bolder">Tuesday</span> classes with Brian & Julieta</h1>
 					<h2>Debating Hall, Teviot</h2>
 					<div class="item">
-						<h3><span class="bolder">6:00pm-7:15pm</span> Intermediates</h3>
-						<p>For those who dance for more than a year</p>
+						<h3><span class="bolder">6:00pm-7:00pm</span> Intermediates</h3>
+						<p>For those who want to excel at their dance/p>
 					</div>
 					<div class="item">
-						<h3><span class="bolder">7:15pm-8:30pm</span> Post-Beginners</h3>
-						<p>For those with at least six months of experience</p>
+						<h3><span class="bolder">7:00pm-8:00pm</span> Beginners</h3>
+						<p>For those making their first steps in Tango</p>
+					</div>
+					<div class="item">
+						<h3><span class="bolder">8:00pm-8:30pm</span> Supervised practica</h3>
+						<p>A place to dance, experiment and ask questions</p>
 					</div>
 				</div>
 				<div class="weekday">
