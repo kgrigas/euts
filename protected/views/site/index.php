@@ -82,35 +82,24 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 					</div>
 				</div>
 				<div class="weekday">
-					<h1><span class="bolder">Tuesday</span> practica with Toby</h1>
+					<h1><span class="bolder">Tuesday</span> classes with Brian & Julieta</h1>
+					<h2>South Bridge Resource Centre <a href="https://goo.gl/maps/DX6TB" target="_blank"><i class="fa fa-map-marker"></i></a></h2>
+					<div class="item">
+						<h3><span class="bolder">6:30pm-7:30pm</span> Improvers/Intermediates</h3>
+						<p>For those who want to excel at their dance</p>
+					</div>
+					<div class="item">
+						<h3><span class="bolder">7:30pm-8:30pm</span> Beginners</h3>
+						<p>For those making their first steps in Tango</p>
+					</div>
+				</div>
+				<div class="weekday">
+<!--					<h1><span class="bolder">Wednesday</span> practica with Toby</h1>
 					<h2>Debating Hall, Teviot</h2>
 					<div class="item">
 						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
 						<p>Get personal advice and use the dancefloor. And it's free!</p>
-					</div>
-
-					<h1><span class="bolder">Tuesday</span> classes with Brian & Julieta</h1>
-					<h2>Debating Hall, Teviot</h2>
-					<div class="item">
-						<h3><span class="bolder">6:00pm-7:00pm</span> Intermediates</h3>
-						<p>For those who want to excel at their dance/p>
-					</div>
-					<div class="item">
-						<h3><span class="bolder">7:00pm-8:00pm</span> Beginners</h3>
-						<p>For those making their first steps in Tango</p>
-					</div>
-					<div class="item">
-						<h3><span class="bolder">8:00pm-8:30pm</span> Supervised practica</h3>
-						<p>A place to dance, experiment and ask questions</p>
-					</div>
-				</div>
-				<div class="weekday">
-					<h1><span class="bolder">Wednesday</span> practica with Toby</h1>
-					<h2>Debating Hall, Teviot</h2>
-					<div class="item">
-						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
-						<p>Because one practica is not enought. Did we mentioned that it's free?</p>
-					</div>
+					</div>-->
 
 
 					<h1><span class="bolder">Wednesday</span> classes with Toby</h1>
@@ -124,7 +113,15 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 						<p>For those making their first steps</p>
 					</div>
 					<div class="item">
-						<p>Need more time to try out new things you learned? Stay after the class, since it is followed by <span class="bolder">unsupervised practica</span> (spacious dancefloor with music) <span class="bolder">until 9:30pm</span>!</p>
+						<p>Need more time to try out new things you learned? Stay after the class, since it is followed by <span class="bolder">unsupervised practica</span> (spacious dancefloor with music) <span class="bolder">until 9:00pm</span>!</p>
+					</div>
+				</div>
+				<div class="weekday">
+					<h1><span class="bolder">Thursday</span> practica with Toby</h1>
+					<h2>Debating Hall, Teviot</h2>
+					<div class="item">
+						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
+						<p>Because one practica is not enought. Did we mention that it's free?</p>
 					</div>
 				</div>
 			</div>

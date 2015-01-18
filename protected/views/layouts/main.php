@@ -7,16 +7,14 @@
 
 	<?php
 	Yii::app()->clientScript->registerLinkTag('shortcut icon', null, Yii::app()->request->baseUrl.'/images/logo.png');
-	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css');
+	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/site.min.css');
 
-
-	Yii::app()->clientScript->registerCoreScript('jquery');
-	Yii::app()->clientScript->registerScriptFile('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js');
+	Yii::app()->clientScript->registerScriptFile('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js');
+	Yii::app()->clientScript->registerScriptFile('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 	?>
-
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
