@@ -26,7 +26,7 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 			</div>
 			<div class="col-sm-4 col-xs-12">
 
-				<div class="news">
+				<!--<div class="news">
 					<h4 class="title">Upcoming events</h4>
 
 					<?php foreach ($news as $singleNews): ?>
@@ -35,7 +35,7 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 						<h4><?php echo $singleNews['location']; ?></h4>
 						<?php /*echo $singleNews['content'];*/ ?>
 					<?php endforeach; ?>
-				</div>
+				</div>-->
 
 				<div class="blog">
 					<h4 class="title">Latest blog entry</h4>
@@ -68,65 +68,34 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<h1 style="font-size: 2.5em; margin-bottom: 1.25em;">Classes &amp; Practicas</h1>
+				<p>Our classes do not run during the summer, but there are classes run by other teachers which have special discounts for Student EUTS members:</p>
 
 				<div class="weekday">
-					<h1><span class="bolder">Monday</span> classes with Sarah</h1>
-					<h2>Pi in the sky, Kings Buildings House</h2>
+					<h1><span class="bolder">Monday</span> practica with Jenny &amp; Ricardo</h1>
+					<h2>The Counting House</h2>
 					<div class="item">
-						<h3><span class="bolder">5:30pm - 6:20pm</span> Beginners</h3>
-						<p>To learn and re-learn the first steps</p>
+						<h3><span class="bolder">8:05pm - 8:30pm</span> Core Session</h3>
+						<p>A short session focused on core Tango techniques. It awesome, and it comes for free if you come to Rumbos studio night!</p>
 					</div>
 					<div class="item">
-						<h3><span class="bolder">6:30pm - 7:20pm</span> Improvers</h3>
-						<p>To further improve your dancing abilities</p>
+						<h3><span class="bolder">8:30pm - 10:30pm</span> Rumbos studio night</h3>
+						<p>The best place to practice technique, connection and improvisation skills, all under the supervision to one of the best Tango dancers in UK. (&pound;3)</p>
 					</div>
 				</div>
 				<div class="weekday">
-					<h1><span class="bolder">Tuesday</span> classes with Brian & Julieta</h1>
-					<h2>South Bridge Resource Centre <a href="https://goo.gl/maps/DX6TB" target="_blank"><i class="fa fa-map-marker"></i></a></h2>
+					<h1><span class="bolder">Thursday</span> classes with Sarah</h1>
+					<h2>The Merlin <a href="https://goo.gl/maps/9yLae" target="_blank"><i class="fa fa-map-marker"></i></a></h2>
 					<div class="item">
-						<h3><span class="bolder">6:30pm-7:30pm</span> Improvers/Intermediates</h3>
-						<p>For those who want to excel at their dance</p>
+						<h3><span class="bolder">7:30pm-8:45pm</span> Beginners</h3>
+						<p>For those making their first steps in Tango (&pound;4)</p>
 					</div>
 					<div class="item">
-						<h3><span class="bolder">7:30pm-8:30pm</span> Beginners</h3>
-						<p>For those making their first steps in Tango</p>
-					</div>
-				</div>
-				<div class="weekday">
-<!--					<h1><span class="bolder">Wednesday</span> practica with Toby</h1>
-					<h2>Debating Hall, Teviot</h2>
-					<div class="item">
-						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
-						<p>Get personal advice and use the dancefloor. And it's free!</p>
-					</div>-->
-
-
-					<h1><span class="bolder">Wednesday</span> classes with Toby</h1>
-					<h2>The Venue, Poterrow</h2>
-					<div class="item">
-						<h3><span class="bolder">6:00pm-7:00pm</span> Improvers</h3>
-						<p>For those with experience or who want to improve faster</p>
-					</div>
-					<div class="item">
-						<h3><span class="bolder">7:00pm-8:30pm</span> Beginners</h3>
-						<p>For those making their first steps</p>
-					</div>
-					<div class="item">
-						<p>Need more time to try out new things you learned? Stay after the class, since it is followed by <span class="bolder">unsupervised practica</span> (spacious dancefloor with music) <span class="bolder">until 9:00pm</span>!</p>
-					</div>
-				</div>
-				<div class="weekday">
-					<h1><span class="bolder">Thursday</span> practica with Toby</h1>
-					<h2>Debating Hall, Teviot</h2>
-					<div class="item">
-						<h3><span class="bolder">12:45pm-1:45pm</span> Practica</h3>
-						<p>Because one practica is not enought. Did we mention that it's free?</p>
+						<h3><span class="bolder">8:50pm-10:00pm</span> Improvers</h3>
+						<p>For those who want to excel at their dance (&pound;4)</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </section>
 
@@ -142,12 +111,13 @@ $this->pageTitle = 'Edinburgh University Tango Society';
 
 					<h3>EUTS Committee</h3>
 					<ul>
-						<li><strong>President</strong> - Ivana Lapsanska</li>
-						<li><strong>Vice President</strong> - Dimo Petroff</li>
-						<li><strong>Treasurer</strong> - Erifili Efthymiadou</li>
+						<li><strong>President</strong> - Teresa Spanò</li>
+						<li><strong>Vice President</strong> - Nevena Kostova</li>
+						<li><strong>Treasurer</strong> - Yavor Panev</li>
 						<li><strong>Secretary</strong> - Filip Margetiny</li>
-						<li><strong>Social Secretary</strong> - Tania Marques</li>
-						<li><strong>Public Relations</strong> - Paraskevi Papagianni</li>
+						<li><strong>Social Secretary</strong> - Konstanze Simbriger</li>
+						<li><strong>Public Relations</strong> - Lana Sverejeva-Hopkins</li>
+						<li><strong>KB Executive</strong> - Igor Krylov</li>
 						<li><strong>IT</strong> - Karolis Grigas</li>
 					</ul>
 

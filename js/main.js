@@ -5,7 +5,6 @@
 $(function(){
 
     $('a[href^=#section]').click(function(e){
-        console.log('a');
         e.preventDefault();
         var body = $("html, body");
         var target = $($(this).attr('href'));
