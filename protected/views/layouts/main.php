@@ -7,12 +7,12 @@
 
 	<?php
 	Yii::app()->clientScript->registerLinkTag('shortcut icon', null, Yii::app()->request->baseUrl.'/images/logo.png');
-	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css');
-	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
-	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/site.min.css');
+	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');
+	Yii::app()->clientScript->registerCssFile('//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+	Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/css/site.css');
 
-	Yii::app()->clientScript->registerScriptFile('//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js');
-	Yii::app()->clientScript->registerScriptFile('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+	//Yii::app()->clientScript->registerScriptFile('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js');
+	Yii::app()->clientScript->registerScriptFile('//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 	Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/main.js');
 	?>
 
@@ -22,7 +22,7 @@
 
 <body>
 
-<nav class="navbar-inverse navbar-fixed-top navbar" role="navigation">
+<!--<nav class="navbar-inverse navbar-fixed-top navbar" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
 			<button class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse">
@@ -32,19 +32,19 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="#section1">
-				<img id="logo" src="<?php echo Yii::app()->baseUrl; ?>/images/logo.png" alt=""> EUTS</a>
+				<img id="logo" src="<?php /*echo Yii::app()->baseUrl; */?>/images/logo.png" alt=""> EUTS</a>
 		</div>
 		<div id="w0-collapse" class="collapse navbar-collapse">
 			<ul id="w1" class="navbar-nav navbar-right nav">
 				<li><a href="#section2">Beginners</a></li>
 				<li><a href="#section3">Classes</a></li>
-				<li><a href="<?php echo Yii::app()->baseUrl.'/blog/'; ?>">Blog</a></li>
+				<li><a href="<?php /*echo Yii::app()->baseUrl.'/blog/'; */?>">Blog</a></li>
 				<li><a href="#section4">Contacts</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
-
+-->
 
 	<div class="wrap">
 		<?php echo $content;?>
@@ -61,7 +61,6 @@
 
 	ga('create', 'UA-54350784-1', 'auto');
 	ga('send', 'pageview');
-
 </script>
 
 </body>

@@ -20,4 +20,20 @@ class Formatter extends CFormatter {
 		return '£'.Yii::app()->format->number(floatval($value));
 	}
 
+
+	/**
+	 * Strips away "Edinburgh" and "United Kingdom" parts from comma separated string
+	 * @param string $value
+	 * @return string
+	 */
+	public function formatLocation($value) {
+		return implode(',',array_filter(explode(',',$value), function($val){
+			return (strpos(strtolower($val), 'edinburgh') === false) && (strpos(strtolower($val), 'united kingdom') === false);
+		}));
+	}
+
+
+	public function formatDayDateTime($value) {
+		return date('l, M d, H:i', $value);
+	}
 }

@@ -25,26 +25,11 @@ class SiteController extends Controller
 		$news = false;
 
 		if ($news === false) {
-			$json = $this->url_get_contents("http://www.google.com/calendar/feeds/t1kogqff97immvd7rrc058flu8@group.calendar.google.com/public/full?alt=json&orderby=starttime&max-results=2&singleevents=true&sortorder=ascending&futureevents=true");
-			$var = json_decode($json);
-
-			$news = array();
-
-			if (!empty($var->feed->entry)) {
-				foreach ($var->feed->entry as $entry) {
-					$news[] = array(
-						'title'=>$entry->title->{'$t'},
-						'content'=>substr($entry->content->{'$t'},0,100).'...',
-						'location'=>$entry->{'gd$where'}[0]->valueString,
-						'time'=>strtotime($entry->{'gd$when'}[0]->startTime)
-					);
-				}
-			}
+			$news = $this->getGoogleEvents();
 			Yii::app()->cache->set('news',$news,1800);
 		}
 
 		//Blog
-
 		$blogPost = WPPosts::model()->latest()->find();
 
 		$this->render('index', array(
@@ -69,22 +54,45 @@ class SiteController extends Controller
 	    }
 	}
 
-	public function actionGoogle() {
-		$json = file_get_contents("http://www.google.com/calendar/feeds/info@edinburghtango.org.uk/public/full?alt=json&orderby=starttime&max-results=3&singleevents=true&sortorder=ascending&futureevents=true");
-		$var = json_decode($json);
-		var_dump($var->feed->entry[0]);
+	public function getGoogleEvents() {
+		//Override Yii's autoloading to allow google autoloading
+		spl_autoload_unregister(array('YiiBase','autoload'));
+		require_once(__DIR__.'/../vendor/Google/autoload.php');
+		spl_autoload_register(array('YiiBase','autoload'));
 
-	}
+		$client = new Google_Client();
+		$client->setApplicationName("My Calendar");
+		$client->setDeveloperKey('AIzaSyDmdWqoy_X1znGv_WW4xp1F84-eUjgnqiw');
 
-	private function url_get_contents($url) {
-		if (!function_exists('curl_init')){
-			die('CURL is not installed!');
+		$cal = new Google_Service_Calendar($client);
+		$calendarId = 't1kogqff97immvd7rrc058flu8@group.calendar.google.com';
+		$params = array(
+			//CAN'T USE TIME MIN WITHOUT SINGLEEVENTS TURNED ON,
+			//IT SAYS TO TREAT RECURRING EVENTS AS SINGLE EVENTS
+				'singleEvents' => true,
+				'orderBy' => 'startTime',
+				'timeMin' => date(DateTime::ATOM), //ONLY PULL EVENTS STARTING TODAY
+				'timeMax' => date(DateTime::ATOM,time()+(60*60*24*7)), // UP TO ONE WEEK AWAY
+			//OF EVENTS DISPLAYED
+
+		);
+		$events = $cal->events->listEvents($calendarId, $params);
+		$calTimeZone = $events->timeZone; //GET THE TZ OF THE CALENDAR
+
+		//SET THE DEFAULT TIMEZONE SO PHP DOESN'T COMPLAIN. SET TO YOUR LOCAL TIME ZONE.
+		date_default_timezone_set($calTimeZone);
+
+		$returnEvents = [];
+
+		foreach ($events->getItems() as $event) {
+			$returnEvents[] = array(
+				'title'=>$event->summary,
+				'location'=>$event->location,
+				'timeStart'=>strtotime($event->start->dateTime),
+				'timeEnd'=>strtotime($event->end->dateTime)
+			);
 		}
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$output = curl_exec($ch);
-		curl_close($ch);
-		return $output;
+
+		return $returnEvents;
 	}
 }
