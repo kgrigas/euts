@@ -30,12 +30,30 @@ class SiteController extends Controller
 		}
 
 		//Blog
-		$blogPost = WPPosts::model()->latest()->find();
+		$blogPosts = WPPosts::model()->findAllByAttributes(array("post_status"=>"publish"),array("order"=>"post_date DESC"));
 
 		$this->render('index', array(
 			'news'=>$news,
-			'blogPost'=>$blogPost,
+			'blogPosts'=>$blogPosts,
 		));
+	}
+
+	public function actionFeedback(){
+		if (!empty($_POST['feedback'])){
+			$feedback = new Feedback();
+			$feedback->text = $_POST['feedback'];
+			if ($feedback->save()) {
+				$this->redirect('thankyou');
+			} else {
+				$this->render('feedback');
+			}
+		} else {
+			$this->render('feedback');
+		}
+	}
+
+	public function actionThankYou(){
+		$this->render('thankyou');
 	}
 
 
@@ -72,7 +90,7 @@ class SiteController extends Controller
 				'singleEvents' => true,
 				'orderBy' => 'startTime',
 				'timeMin' => date(DateTime::ATOM), //ONLY PULL EVENTS STARTING TODAY
-				'timeMax' => date(DateTime::ATOM,time()+(60*60*24*7)), // UP TO ONE WEEK AWAY
+				'timeMax' => date(DateTime::ATOM,time()+(60*60*24*7*2)), // UP TO TWO WEEKS AWAY
 			//OF EVENTS DISPLAYED
 
 		);

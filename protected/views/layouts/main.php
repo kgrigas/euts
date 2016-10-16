@@ -46,12 +46,9 @@
 </nav>
 -->
 
-	<div class="wrap">
-		<?php echo $content;?>
-	</div>
-<footer class="text-center">
-	&#169; <?php echo date("Y"); ?> Edinburgh University Tango Society
-</footer>
+
+<?php echo $content;?>
+
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
